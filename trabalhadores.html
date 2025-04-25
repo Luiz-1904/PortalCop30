@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalhadores - TurPará</title>
+  <link rel="stylesheet" href="trabalhadores.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header-trabalhadores">
+  <h1>Trabalhadores</h1>
+</header>
+
+<section class="top-banner">
+  <img src="Imagens/banner-turpara.jpg" alt="TurPará Banner">
+</section>
+
+<div id="filtros">
+    <input type="text" id="filtro-idioma" placeholder="Idioma">
+    <button id="botao-idioma">🔍</button>
+  
+    <input type="text" id="filtro-filtro" placeholder="Filtrar">
+    <button id="botao-filtro">🔍</button>
+  
+    <input type="text" id="filtro-localizacao" placeholder="Localização">
+    <button id="botao-localizacao">🔍</button>
+  </div>
+  
+
+<section class="cards-container">
+  
+    <div class="trabalhadores">
+        <div class="card">
+          <img src="..." alt="Foto">
+          <h3>João Silva</h3>
+          <p><strong>Idiomas:</strong> 🇧🇷 Português | 🇬🇧 Inglês</p>
+          <p><strong>Localização:</strong> Belém - PA</p>
+          <button>Ver Perfil</button>
+        </div>
+      
+        <div class="card">
+          <img src="..." alt="Foto">
+          <h3>Israel Siqueira</h3>
+          <p><strong>Idiomas:</strong> 🇧🇷 Português | 🇫🇷 Francês</p>
+          <p><strong>Localização:</strong> Ananindeua - PA</p>
+          <button>Ver Perfil</button>
+        </div>
+
+        <div class="card">
+            <img src="Imagens/ruan-maciel.jpg" alt="Ruan Maciel" class="foto-perfil">
+            <h3>Ruan Maciel</h3>
+            <p><strong>Idiomas:</strong> 🇧🇷 Português | 🇫🇷 Francês</p>
+            <p><strong>Localização:</strong> Ananindeua - PA</p>
+            <button class="btn-perfil">Ver Perfil</button>
+          </div>
+
+          <div class="card">
+            <img src="Trabalhadores/IMG_20250125_200536.jpg" alt="Luiz Otávio Machado" class="foto-perfil">
+            <h3>Luiz Machado</h3>
+            <p><strong>Idiomas:</strong> 🇧🇷 Português | 🇬🇧 Inglês</p>
+            <p><strong>Localização:</strong> Belém - PA</p>
+            <button class="btn-perfil">Ver Perfil</button>
+          </div>
+      
+        <!-- outros cards... -->
+      </div>
+      
+
+  
+  
+
+  <div class="card vazio"></div>
+  <div class="card vazio"></div>
+  <div class="card vazio"></div>
+  <div class="card vazio"></div>
+  <div class="card vazio"></div>
+
+</section>
+
+<section class="sobre-nos">
+  <h2>Sobre Nós</h2>
+  <p>Facilidade na sua comunicação com nossos nativos paraenses para uma melhor experiência na COP30.</p>
+</section>
+
+<footer class="rodape">
+  <img src="Imagens/brasil-pará-cop30.png" alt="Logos">
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+    
+      const inputIdioma = document.getElementById('filtro-idioma');
+      const inputFiltro = document.getElementById('filtro-filtro');
+      const inputLocalizacao = document.getElementById('filtro-localizacao');
+    
+      const botaoIdioma = document.getElementById('botao-idioma');
+      const botaoFiltro = document.getElementById('botao-filtro');
+      const botaoLocalizacao = document.getElementById('botao-localizacao');
+    
+      function filtrar(tipo, valor) {
+        cards.forEach(card => {
+          const texto = card.textContent.toLowerCase();
+          if (texto.includes(valor.toLowerCase())) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    
+      botaoIdioma.addEventListener('click', () => {
+        filtrar('idioma', inputIdioma.value.trim());
+      });
+    
+      botaoFiltro.addEventListener('click', () => {
+        filtrar('filtro', inputFiltro.value.trim());
+      });
+    
+      botaoLocalizacao.addEventListener('click', () => {
+        filtrar('localizacao', inputLocalizacao.value.trim());
+      });
+    });
+    </script>
+    
+</body>
+</html>
